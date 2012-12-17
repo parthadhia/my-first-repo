@@ -10,7 +10,7 @@ public class execute {
 			
 				if(univ[i][j].getStatus().equals("alive"))
 				{
-					System.out.print("c ");
+					System.out.print("*");
 				}
 				else
 				{
@@ -159,6 +159,7 @@ public class execute {
 	    	
 	    	c=in.readLine();
 	    	if(c.equals("y"))
+	    	
 	    	{
 	    		f=true;
 	    		System.out.println("Here is the next generation");
@@ -174,8 +175,10 @@ public class execute {
 	    		}
 	    		display(ob.univ);
 	    	}
+	    	
 	    	else 
 	    	{
+	    	
 	    		f=false;
 	    		System.out.println("thankyou for using the game of life, hope to see you again mate");
 	    	
