@@ -8,7 +8,7 @@ public class execute {
 			for(int j=0;j<univ[0].length;j++)
 			{
 			
-				if(univ[i][j].getStatus().equals("alive"))
+				if(univ[i][j].getStatus())
 				{
 					System.out.print("*");
 				}
@@ -32,28 +32,28 @@ public class execute {
 				
 				if(i!=0 && j!=0)
 				{
-					if(univ[i-1][j-1].getStatus().equals("alive"))
+					if(univ[i-1][j-1].getStatus())
 					{
 						count++;
 					}
 				}
 				if(i!=0)
 				{
-					if(univ[i-1][j].getStatus().equals("alive"))
+					if(univ[i-1][j].getStatus())
 					{
 						count++;
 					}
 				}
 				if(j!=0)
 				{
-					if(univ[i][j-1].getStatus().equals("alive"))
+					if(univ[i][j-1].getStatus())
 					{
 						count++;
 					}
 				}
 				if(i!= x-1 && j!= y-1)
 				{
-					if(univ[i+1][j+1].getStatus().equals("alive"))
+					if(univ[i+1][j+1].getStatus())
 					{
 						count++;
 					}
@@ -61,28 +61,28 @@ public class execute {
 				}
 				if(i!=x-1)
 				{
-					if(univ[i+1][j].getStatus().equals("alive"))
+					if(univ[i+1][j].getStatus())
 					{
 						count++;
 					}
 				}
 				if(j!=y-1)
 				{
-					if(univ[i][j+1].getStatus().equals("alive"))
+					if(univ[i][j+1].getStatus())
 					{
 						count++;
 					}
 				}
 				if(i!=0 && j!=y-1)
 				{
-					if(univ[i-1][j+1].getStatus().equals("alive"))
+					if(univ[i-1][j+1].getStatus())
 					{
 						count++;
 					}
 				}
 				if(i!=x-1 && j!=0)
 				{
-					if(univ[i+1][j-1].getStatus().equals("alive"))
+					if(univ[i+1][j-1].getStatus())
 					{
 						count++;
 					}
@@ -102,24 +102,24 @@ public class execute {
 			for(int j=0; j<univ[0].length; j++)
 			{
 				
-				if(univ[i][j].getStatus().equals("alive") && univ[i][j].getNeighbors()<2)
+				if(univ[i][j].getStatus() && univ[i][j].getNeighbors()<2)
 				{
-					univ[i][j].setStatus("dead");
+					univ[i][j].setDead();
 					
 					
 				}
-				else if(univ[i][j].getStatus().equals("alive") && univ[i][j].getNeighbors()==2 || univ[i][j].getNeighbors()==3)
+				else if(univ[i][j].getStatus() && univ[i][j].getNeighbors()==2 || univ[i][j].getNeighbors()==3)
 				{
-					univ[i][j].setStatus("alive");
+					univ[i][j].setAlive();
 				
 				}
-				else if(univ[i][j].getStatus().equals("dead") && univ[i][j].getNeighbors()==3)
+				else if(!univ[i][j].getStatus() && univ[i][j].getNeighbors()==3)
 				{
-					univ[i][j].setStatus("alive");
+					univ[i][j].setAlive();
 				}
-				else if(univ[i][j].getStatus().equals("alive") && univ[i][j].getNeighbors()>3)
+				else if(univ[i][j].getStatus() && univ[i][j].getNeighbors()>3)
 				{
-					univ[i][j].setStatus("dead");
+					univ[i][j].setDead();
 				
 				}
 			}

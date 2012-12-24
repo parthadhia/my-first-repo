@@ -1,20 +1,24 @@
 
 public class Cell {
 
-	private String status;
+	private boolean status;
 	private int neighbors;
 	Cell()
 	{
-		status="";
+		status=false;
 		neighbors=0;
 	}
-	String getStatus()
+	boolean getStatus()
 	{
 		return status;
 	}
-	void setStatus(String status)
+	void setAlive()
 	{
-		this.status=status;
+		status=true;
+	}
+	void setDead()
+	{
+		status=false;
 	}
 	int getNeighbors()
 	{

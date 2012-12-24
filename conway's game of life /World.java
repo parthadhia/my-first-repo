@@ -22,7 +22,7 @@ public class World {
 	
 	public void populate_first_generation()
 	{
-		int stat=0;String status="";
+		int stat=0;
 		for(int i=0; i<numx; i++)
 		{
 			
@@ -31,13 +31,13 @@ public class World {
 				stat=(int)(Math.random()*2);
 				if(stat==0)
 				{
-					status="alive";
+					univ[i][j].setAlive();
 				}
 				else
 				{
-					status="dead";
+					univ[i][j].setDead();
 				}
-				univ[i][j].setStatus(status);
+				
 			}
 		}
 	}
